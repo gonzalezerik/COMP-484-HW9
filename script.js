@@ -1,12 +1,11 @@
 // Part 1: Date Display
 
 var currentDate = new Date();
-
-var currentMonth = currentDate.getMonth() + 1; // Months are 0-indexed, so we add 1 [cite: 1015]
+var currentMonth = currentDate.getMonth() + 1; // Months are 0-indexed, so we add 1 
 var currentDay = currentDate.getDate();
 var currentYear = currentDate.getFullYear();
 
-// Add leading zeros if the month or day is less than 10 [cite: 1015]
+// Add leading zeros if the month or day is less than 10 
 
 if (currentMonth < 10) {
     currentMonth = "0" + currentMonth;
@@ -26,7 +25,7 @@ var strValTwo = "250";
 var decVal = "3.14";           
 var wordVal = "javascript";    
 
-// Convert, check, and create sentences for each variable [cite: 703, 746]
+// Convert, check, and create sentences for each variable 
 // Number() object to convert the string
 var convertedOne = Number(strValOne);
 
@@ -42,7 +41,7 @@ var resultSentenceDecimal = "Original: '" + decVal + "' &rarr; Converted: " + co
 var convertedWord = Number(wordVal);
 var resultSentenceWord = "Original: '" + wordVal + "' &rarr; Converted: " + convertedWord + " &rarr; isNaN: " + Number.isNaN(convertedWord) + " &rarr; isInteger: " + Number.isInteger(convertedWord) + "<br>";
 
-// 1st if/else statement [cite: 850, 858]
+// 1st if/else statement 
 var wordCheckMsg = "";
 if (Number.isNaN(convertedWord)) {
     wordCheckMsg = "<p><em>Note: The value '" + wordVal + "' is not a valid number.</em></p>";
@@ -78,7 +77,7 @@ mathResults += "<p>Yearly Growth: " + yearlyIncrease.toLocaleString() + " (" + g
 mathResults += "<p>Increase over 5 years: " + totalIncrease.toLocaleString() + "</p>";
 mathResults += "<p><strong>Projected Population: " + futurePopulation.toLocaleString() + "</strong></p>";
 
-// 2nd if/else statement [cite: 851, 859]
+// 2nd if/else statement 
 if (futurePopulation > 8400000000) {
     mathResults += "<p><em>Message: This is a huge number!</em></p>";
 } else {
