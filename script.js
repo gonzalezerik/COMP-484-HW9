@@ -1,4 +1,3 @@
-
 // Part 1: Date Display
 
 var currentDate = new Date();
@@ -43,8 +42,16 @@ var resultSentenceDecimal = "Original: '" + decVal + "' &rarr; Converted: " + co
 var convertedWord = Number(wordVal);
 var resultSentenceWord = "Original: '" + wordVal + "' &rarr; Converted: " + convertedWord + " &rarr; isNaN: " + Number.isNaN(convertedWord) + " &rarr; isInteger: " + Number.isInteger(convertedWord) + "<br>";
 
+// 1st if/else statement 
+var wordCheckMsg = "";
+if (Number.isNaN(convertedWord)) {
+    wordCheckMsg = "<p><em>Note: The value '" + wordVal + "' is not a valid number.</em></p>";
+} else {
+    wordCheckMsg = "<p><em>Note: The value '" + wordVal + "' is a valid number.</em></p>";
+}
+
 //Combine and display results
-var finalConversionOutput = resultSentenceOne + resultSentenceTwo + resultSentenceDecimal + resultSentenceWord;
+var finalConversionOutput = resultSentenceOne + resultSentenceTwo + resultSentenceDecimal + resultSentenceWord + wordCheckMsg;
 document.getElementById("numberConversionOutput").innerHTML = finalConversionOutput;
 
 
@@ -69,30 +76,12 @@ mathResults += "<p>Tax (8%): $" + taxAmount.toFixed(2) + "</p>";
 mathResults += "<p>Tip (20%): $" + tipAmount.toFixed(2) + "</p>";
 mathResults += "<p><strong>Total Bill: $" + totalCost.toFixed(2) + "</strong></p>";
 
+// 2nd if/else statement 
+if (totalCost > 50) {
+    mathResults += "<p><em>Message: This is expensive!</em></p>";
+} else {
+    mathResults += "<p><em>Message: it wasnt too bad!</em></p>";
+}
+
 //Display the results
 document.getElementById("mathOutput").innerHTML = mathResults;
-
-
-// Part 4: Conditionals
-
-
-var conditionalMessages = "";
-
-// Condition 1: Checking if a value is NaN
-if (Number.isNaN(convertedWord)) {
-    
-    conditionalMessages += "<p>Check 1: The value '" + wordVal + "' is definitely not a number!</p>";
-} else {
-    conditionalMessages += "<p>Check 1: The value '" + wordVal + "' successfully converted to a number.</p>";
-}
-
-// Condition 2: Checking a greater than
-// If the restaurant bill is over $50, output a specific message.
-if (totalCost > 50) {
-    conditionalMessages += "<p>Check 2: Your total of $" + totalCost.toFixed(2) + " is quite expensive! Hope the food was good.</p>";
-} else {
-    conditionalMessages += "<p>Check 2: Your total of $" + totalCost.toFixed(2) + " is a great deal for a meal out.</p>";
-}
-
-// Append the conditional messages to the new 4th section in the DOM
-document.getElementById("conditionalsOutput").innerHTML = conditionalMessages;
