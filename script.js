@@ -79,7 +79,7 @@ mathResults += "<p><strong>Projected Population: " + futurePopulation.toLocaleSt
 if (futurePopulation > 8400000000) {
     mathResults += "<p><em>Message: This is a huge number!</em></p>";
 } else {
-    mathResults += "<p><em>Message: it wasnt too bad!</em></p>";
+    mathResults += "<p><em>Message: This is a small number!</em></p>";
 }
 
 //Display the results
